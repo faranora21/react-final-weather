@@ -2,25 +2,29 @@
     max-width: 1200px;
     margin: 50px auto;
     padding: 50px;
-    border-radius: 30px;
+    border-radius: 20px;
     background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 }
 
-#search-form {
-    text-align: center;
-}
-
-.weather-time {
-    text-align: center;
-}
-
 .weather-time h1 {
-font: 50px;
+font: 70px;
 }
 
 .weather-time li {
     list-style: none;
-    font-size: 28px;
+    font-size: 35px;
     position: relative;
     right: 2%;
+}
+
+.weather-info {
+    max-width: 180px;
+    font-size: 20px;
+    position: relative;
+    left: 5%;
+    border-radius: 20px;
+    background: #f1f1f1;
+   padding: 20px;
+   box-shadow: 2px 5px 5px #c4bbf0;
+   margin: 10px;
 }
