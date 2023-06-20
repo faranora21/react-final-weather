@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="container">
     Weather app
-    <Weather />
+    <Weather defaultCity="Johor Bahru"/>
     <footer>
       This project is created by Farah Johari and is {" "}
      <a href="https://github.com/faranora21/react-final-weather" target="_blank" rel="noreferrer">open-sourced on Github</a>
