@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
     const [city, setCity] = useState(props.defaultCity);
@@ -10,26 +11,27 @@ export default function Weather(props) {
         console.log(response.data);
          setWeatherData({
          ready:true,
-         temperature: response.data.main.temp,
-         humidity: response.data.main.humidity,
+         coordinates: response.data.coordinates,
+         temperature: response.data.temperature.current,
+         humidity: response.data.temperature.humidity,
          wind: response.data.wind.speed,
-         city: response.data.name,
-         description: response.data.weather[0].description,
-         date: new Date(response.data.dt * 1000),
+         city: response.data.city,
+         description: response.data.condition.description,
+         date: new Date(response.data.time * 1000),
+         iconUrl: response.data.condition.icon_url,
          });
     } 
 
     function search(){
-        let apiKey = "5ef4de8cd6b7fefcd7c42f98cf464ce8";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        let apiKey = "d2210b1aacbt02b56cbd90afd6o43f8e";
+        let units = "metric"
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
         axios.get(apiUrl).then(handleResponse).catch((e) => console.log(e));
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        let apiKey = "5ef4de8cd6b7fefcd7c42f98cf464ce8";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse).catch((e) => console.log(e));
+        search();
     }
 
     function handleCityChange(event){
@@ -56,7 +58,7 @@ export default function Weather(props) {
                 </div>
             </div>
             <WeatherInfo data={weatherData}/>
-           
+           <WeatherForecast coordinates={weatherData.coordinates}/>
             </div>
         );
     } else {
