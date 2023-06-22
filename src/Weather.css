@@ -44,9 +44,19 @@ font: 70px;
     left: 150px;
 }
 
+.humidity {
+    font-weight: bold;
+    color:  #77628c; 
+}
+
+.wind {
+    font-weight: bold;
+    color:  #77628c; 
+}
+
 
 .weather-info {
-    max-width: 160px;
+    max-width: 180px;
     font-size: 15px;
     position: relative;
     left: 70%;

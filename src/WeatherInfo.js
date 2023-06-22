@@ -26,8 +26,8 @@ return (
 </div>
 <div className="container weather-info">
     <div className="text-capitalize">{props.data.description}</div>
-    <div>Humidity: {props.data.humidity}%</div>
-    <div>Wind: {props.data.wind}km/h</div>
+    <div>Humidity: <span className="humidity">{props.data.humidity}%</span></div>
+    <div>Wind: <span className="wind">{props.data.wind}km/h</span></div>
 </div>
 </div>
 );
