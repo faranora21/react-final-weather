@@ -1,0 +1,12 @@
+.WeatherForecast {
+    text-align: center;
+    font-size: 18px;
+}
+
+.WeatherForecast-day {
+    font-weight: bold;
+}
+
+.WeatherForecast-temperature {
+    color: #6e5773;
+}

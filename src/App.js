@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-    Weather app
     <Weather defaultCity="Johor Bahru"/>
     <footer>
       This project is created by Farah Johari and is {" "}
