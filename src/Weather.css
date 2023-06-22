@@ -10,6 +10,11 @@
     height: 250px;
 }
 
+.btn {
+    position: relative;
+    left: 4px;
+}
+
 .weather-time{
     position: relative;
     right: 10px;
